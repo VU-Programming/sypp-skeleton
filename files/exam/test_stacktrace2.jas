@@ -1,0 +1,15 @@
+.main
+.var
+.end-var
+    BIPUSH 0 // OBJREF
+    INVOKEVIRTUAL no_locals
+    HALT
+.end-main
+
+.method no_locals()
+.var
+.end-var
+    STACKTRACE
+    BIPUSH 99
+    IRETURN
+.end-method

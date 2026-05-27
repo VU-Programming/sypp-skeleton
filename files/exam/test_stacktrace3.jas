@@ -1,0 +1,25 @@
+.main
+.var
+.end-var
+    BIPUSH 0 // OBJREF
+    BIPUSH 3 // n = 3
+    INVOKEVIRTUAL fact
+    HALT
+.end-main
+
+.method fact(n)
+.var
+.end-var
+    ILOAD n
+    IFEQ base_case
+    BIPUSH 0 // OBJREF
+    ILOAD n
+    BIPUSH 1
+    ISUB
+    INVOKEVIRTUAL fact
+    IRETURN
+base_case:
+    STACKTRACE
+    BIPUSH 1
+    IRETURN
+.end-method

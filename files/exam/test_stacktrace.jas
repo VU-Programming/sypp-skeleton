@@ -1,0 +1,37 @@
+.main
+.var
+    main_var1
+    main_var2
+.end-var
+    // Call foo(arg1, arg2) -> requires OBJREF + 2 args = 3 items
+    BIPUSH 0   // OBJREF
+    BIPUSH 10  // arg1
+    BIPUSH 20  // arg2
+    INVOKEVIRTUAL foo
+    HALT
+.end-main
+
+.method foo(arg1, arg2)
+.var
+    foo_var1
+    foo_var2
+.end-var
+    // Call bar(arg1) -> requires OBJREF + 1 arg = 2 items
+    BIPUSH 0   // OBJREF
+    BIPUSH 30  // arg1
+    INVOKEVIRTUAL bar
+    IRETURN
+.end-method
+
+.method bar(arg1)
+.var
+    bar_var1
+.end-var
+    // Print the stacktrace!
+    // Expected output:
+    // Frame: Locals=3, CallerPC=15
+    // Frame: Locals=5, CallerPC=9
+    STACKTRACE
+    BIPUSH 42
+    IRETURN
+.end-method
