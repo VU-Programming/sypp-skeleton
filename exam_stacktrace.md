@@ -23,7 +23,17 @@ fprintf(m->out, "Frame: Main\n");
 
 Number of locals = number arguments + objref + local variables
 
+## Implementation
+
+Implement the new instruction `OP_STACKTRACE`. Add the following line to `include\ijvm.h`
+
+```c
+#define OP_STACKTRACE     (0x38)
+```
 
 ## Testing your implementation
 
-Pressing 
+Pressing Run to run `test_stacktrace` as well as the original basic tests. 
+Your implementation must pass both the new as well as the original basic tests.
+We do not test the advanced tests here, and it is not required your implementation 
+still passes them.
