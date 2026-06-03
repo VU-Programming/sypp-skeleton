@@ -86,6 +86,21 @@ UNAME_S := $(shell uname -s)
 zip: 
 	zip dist.zip bonus.md `find src include -iname "*.c" -o -iname "*.h"`
 
+example-exam-zip:
+	rm -rf example-exam-tmp
+	git clone --depth 1 -b example-exam https://github.com/VU-Programming/sypp-skeleton.git example-exam-tmp
+	cp src/*.c example-exam-tmp/src/
+	mv example-exam-tmp/include/ijvm.h example-exam-tmp/ijvm.h.bak
+	cp include/*.h example-exam-tmp/include/
+	mv example-exam-tmp/ijvm.h.bak example-exam-tmp/include/ijvm.h
+	git clone --depth 1 https://gitlab.com/vu-oofp/website.git example-exam-tmp/website
+	python3 tools/embed_images.py example-exam-tmp/website/manual
+	mv example-exam-tmp/website/manual example-exam-tmp/manual
+	rm -rf example-exam-tmp/website
+	rm -rf example-exam-tmp/.git
+	cd example-exam-tmp && zip -r ../example-exam-submission.zip .
+	rm -rf example-exam-tmp
+
 
 
 test%: $(OBJ) $(TSTDIR)/test%.c
