@@ -176,6 +176,7 @@ void test_collatz(void)
     }
     assert(tos(m) == 19);
     destroy_ijvm(m);
+    fclose(o);
 }
 
 int main(void)
