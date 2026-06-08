@@ -1,7 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Debug testadvanced5" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sypp-skeleton" TARGET_NAME="testadvanced5" CONFIG_NAME="testadvanced5" version="1" RUN_PATH="testadvanced5">
-    <method v="2">
-      <option name="CLION.COMPOUND.BUILD" enabled="true" />
-    </method>
-  </configuration>
-</component>
