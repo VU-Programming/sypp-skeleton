@@ -93,6 +93,8 @@ example-exam-zip:
 	mv example-exam-tmp/include/ijvm.h example-exam-tmp/ijvm.h.bak
 	cp include/*.h example-exam-tmp/include/
 	mv example-exam-tmp/ijvm.h.bak example-exam-tmp/include/ijvm.h
+	cp -r example-exam-tmp/include  example-exam-tmp/include-backup
+	cp -r example-exam-tmp/src example-exam-tmp/src-backup 
 	rm -rf example-exam-tmp/.git
 	cd example-exam-tmp && zip -r ../example-exam-submission.zip .
 	rm -rf example-exam-tmp
