@@ -87,6 +87,7 @@ zip:
 	zip dist.zip bonus.md `find src include -iname "*.c" -o -iname "*.h"`
 
 example-exam-zip:
+	rm example-exam-submission.zip
 	rm -rf example-exam-tmp
 	git clone --depth 1 -b example-exam https://github.com/VU-Programming/sypp-skeleton.git example-exam-tmp
 	cp src/*.c example-exam-tmp/src/
@@ -96,7 +97,7 @@ example-exam-zip:
 	cp -r example-exam-tmp/include  example-exam-tmp/include-backup
 	cp -r example-exam-tmp/src example-exam-tmp/src-backup 
 	rm -rf example-exam-tmp/.git
-	cd example-exam-tmp && zip -r ../example-exam-submission.zip .
+	cd example-exam-tmp && zip -r ../example-exam-submission.zip files include include-backup src src-backup tests assignment.pdf SCO-IJVM.pdf Makefile
 	rm -rf example-exam-tmp
 
 	
