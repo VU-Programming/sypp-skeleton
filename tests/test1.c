@@ -12,7 +12,8 @@ void test_set_in_out(void)
     assert(in == m->in);
     assert(out == m-> out);
     destroy_ijvm(m);
-    
+    fclose(in);
+    fclose(out);
 }
 
 void test_program_1(void)
