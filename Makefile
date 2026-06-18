@@ -108,6 +108,11 @@ test%: $(OBJ) $(TSTDIR)/test%.c
 run_test%: test%
 	./$<
 
+files/task1/aninput files/task1/anoutput:
+	mkdir -p files/task1
+	touch files/task1/aninput files/task1/anoutput
+
+run_test1: files/task1/aninput files/task1/anoutput
 
 
 testbasic: run_test1 run_test2 run_test3 run_test4 run_test5
